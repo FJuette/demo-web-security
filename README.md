@@ -7,7 +7,8 @@ This project and this readme is WIP.
  * Simple Webproject to show XSS, SQL Injection, LFI, RFI...
  * Database: Maria DB in Docker-Containter
  * Webserver: nginx in Docker-Conteiner
- * Docker-Compose for start all.
+ * Docker-Compose for start all
+ * Get client side package with yarn
  
 ## Keywords
  * Button on Webpage to create/reset the database
