@@ -15,3 +15,11 @@ This project and this readme is WIP.
  * Bootstrap or Semantic UI
  * PHP or Python or JS as server language?
  * ...
+
+## XSS
+
+### Demo 1
+
+```javascript
+?name=guest<script>alert('XSS!')</script>
+```
