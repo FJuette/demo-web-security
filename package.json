@@ -1,0 +1,22 @@
+{
+  "name": "demo-web-security",
+  "version": "1.0.0",
+  "description": "This project and this readme is WIP.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FJuette/demo-web-security.git"
+  },
+  "author": "FJuette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FJuette/demo-web-security/issues"
+  },
+  "homepage": "https://github.com/FJuette/demo-web-security#readme",
+  "dependencies": {
+    "bootstrap3": "^3.3.5"
+  }
+}
