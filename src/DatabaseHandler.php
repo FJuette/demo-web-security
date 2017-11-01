@@ -1,14 +1,16 @@
 <?php
 class DatabaseHandler
 {
-	private $servername = "localhost";
+	private $servername;
 	private $username = "root";
-	private $password = "";
+	private $password;
 	private $conn;
-	public $dbName = "hackinghb";
+	public $dbName = "hackingdb";
 	
 	function __construct() {
-       // Create connection
+		$this->servername = getenv('DB_SERVER') ?: "localhost";
+		$this->password = getenv('DB_PASSWORD') ?: "";
+       	// Create connection
 		$this->conn = new mysqli($this->servername, $this->username, $this->password);
 		// Check connection
 		if ($this->conn->connect_error) {
@@ -50,7 +52,7 @@ class DatabaseHandler
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
 		if ($this->conn->query($sql) === TRUE) {
-			echo "Database reset was successfully";
+			echo "Database creation/reset was successfully";
 		} else {
 			echo "Error creating database: " . $this->conn->error;
 		}

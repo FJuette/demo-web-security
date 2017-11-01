@@ -8,8 +8,8 @@
     <meta name="description" content="">
 	<meta name="author" content="FJuette">
 	
-	<link rel="stylesheet" href="vendor/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
        <nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 			<div class="navbar-header">
-			  <a class="navbar-brand" href="#">Demo web security</a>
+			  <a class="navbar-brand" href="../index.php">Demo web security</a>
 			</div>
 			<ul class="nav navbar-nav">
 			  <li><a href="#">Home</a></li>
@@ -28,7 +28,7 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">XSS
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-				  <li><a href="xss1.php?name=Fabian">Demo 1</a></li>
+				  <li><a href="/xss/xss1.php?name=Fabian">Demo 1</a></li>
 				  <li><a href="#">Demo 2</a></li>
 				  <li><a href="#">Demo 3</a></li>
 				</ul>

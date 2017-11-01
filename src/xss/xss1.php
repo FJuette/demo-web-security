@@ -1,6 +1,7 @@
 <?php
-include 'head.php';
+include '../head.php';
 ?>
+
 <h2>Cross Site Scripting</h2>
 <h3>Non-Persistent</h3>
 
@@ -11,5 +12,5 @@ if (ISSET($_GET['name'])) {
 }
 echo "<a class='btn btn-success' href='http://google.com/'>Go to Google</a>";
 
-include 'foot.php';
+include '../foot.php';
 ?>
