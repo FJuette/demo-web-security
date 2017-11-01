@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FJuette/demo-web-security#readme",
   "dependencies": {
-    "bootstrap3": "^3.3.5"
+    "bootstrap3": "^3.3.5",
+    "jquery": "^3.2.1"
   }
 }
