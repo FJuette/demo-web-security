@@ -52,7 +52,7 @@ class DatabaseHandler
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
 		if ($this->conn->query($sql) === TRUE) {
-			echo "Database creation/reset was successfully";
+			echo "Database creation/reset was successful";
 		} else {
 			echo "Error creating database: " . $this->conn->error;
 		}

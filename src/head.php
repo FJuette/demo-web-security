@@ -1,11 +1,13 @@
+<?php header('X-XSS-Protection:0'); //disable browser xss protection features ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Demo web security</title>
 	
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
 	<meta name="author" content="FJuette">
 	
 	<link rel="stylesheet" href="../vendor/bootstrap.min.css">
@@ -28,7 +30,7 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">XSS
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-				  <li><a href="/xss/xss1.php?name=Fabian">Demo 1</a></li>
+				  <li><a href="/xss/xss1.php?name=Fabian">Non-Persistent</a></li>
 				  <li><a href="#">Demo 2</a></li>
 				  <li><a href="#">Demo 3</a></li>
 				</ul>
@@ -46,7 +48,7 @@
 			  <li><a href="#">RFI</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="config.php"><span class="glyphicon glyphicon-cog"></span> Config</a></li>
+			  <li><a href="../config.php"><span class="glyphicon glyphicon-cog"></span> Config</a></li>
 			</ul>
 		  </div>
 		</nav> 
