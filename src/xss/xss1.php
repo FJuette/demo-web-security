@@ -1,4 +1,5 @@
 <?php
+header('X-XSS-Protection:0'); //disable browser xss protection features
 include '../head.php';
 ?>
 

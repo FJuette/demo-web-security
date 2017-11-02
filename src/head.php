@@ -1,5 +1,3 @@
-<?php header('X-XSS-Protection:0'); //disable browser xss protection features ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,14 +23,12 @@
 			  <a class="navbar-brand" href="../index.php">Demo web security</a>
 			</div>
 			<ul class="nav navbar-nav">
-			  <li><a href="#">Home</a></li>
 			  <li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">XSS
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 				  <li><a href="/xss/xss1.php?name=Fabian">Non-Persistent</a></li>
-				  <li><a href="#">Demo 2</a></li>
-				  <li><a href="#">Demo 3</a></li>
+				  <li><a href="/xss/xss2.php">Persistent</a></li>
 				</ul>
 			  </li>
 			  <li class="dropdown">

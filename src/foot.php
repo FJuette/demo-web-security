@@ -2,7 +2,7 @@
 
     <!-- Footer -->
 	<footer class="navbar navbar-default navbar-fixed-bottom">
-		<p class="text-muted" align="center"></p>
+		<p class="text-muted" align="center">Created by FJuette, visit the <a href="https://github.com/FJuette/demo-web-security" target="_blank">Github repository</a> for more information.</p>
 	</footer>
 </div> <!-- /container -->
     <script src="../vendor/jquery.min.js"></script>

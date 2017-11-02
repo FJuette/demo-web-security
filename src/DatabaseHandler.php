@@ -5,7 +5,7 @@ class DatabaseHandler
 	private $username = "root";
 	private $password;
 	private $conn;
-	public $dbName = "hackingdb";
+	private $dbName = "hackingdb";
 	
 	function __construct() {
 		$this->servername = getenv('DB_SERVER') ?: "localhost";
@@ -30,6 +30,8 @@ class DatabaseHandler
 		$this->CreateDatabase();
 		$this->CreateTables();
 		$this->ClearTables();
+		
+		$this->CloseConnection();
 	}
 	
 	public function DatabaseExists() {
@@ -46,25 +48,60 @@ class DatabaseHandler
 			echo "Error on checking database: " . $this->conn->error;
 		}
 		$this->CloseConnection();
-	}	
+	}
+
+	public function AddComment($comment) {
+		$this->conn->select_db($this->dbName);
+		$sql = "INSERT INTO comments (comment) VALUES ('".$comment."');";
+		
+		if ($this->conn->query($sql) === TRUE) {
+		} else {
+			die("Error inserting data: " . $this->conn->error);
+		}
+	}
+	
+	public function ReadComments() {
+		$this->conn->select_db($this->dbName);
+		$sql = "SELECT * FROM comments;";
+		$result = $this->conn->query($sql);
+		
+		$comments = array();
+		while($row = $result->fetch_assoc()) {
+			array_push($comments, $row["comment"]);
+		}
+		return $comments;
+	}
 
 	private function CreateDatabase() {
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
 		if ($this->conn->query($sql) === TRUE) {
-			echo "Database creation/reset was successful";
+			echo "Database creation/reset was successful<br />";
 		} else {
-			echo "Error creating database: " . $this->conn->error;
+			echo "Error creating database: " . $this->conn->error."<br />";
 		}
-		$this->CloseConnection();
 	}
 	
 	private function CreateTables() {
-		
+		$this->conn->select_db($this->dbName);
+		// Create tables
+		$sql = "CREATE TABLE IF NOT EXISTS `comments` (`id` int(3) NOT NULL auto_increment, `comment` varchar(250)  NOT NULL default '', PRIMARY KEY  (`id`));";
+		if ($this->conn->query($sql) === TRUE) {
+			echo "Table creation/reset was successful<br />";
+		} else {
+			echo "Error creating tables: " . $this->conn->error."<br />";
+		}
 	}
 	
 	private function ClearTables() {
-		// TODO
+		$this->conn->select_db($this->dbName);
+		// Clear tables
+		$sql = "DELETE FROM comments;";
+		if ($this->conn->query($sql) === TRUE) {
+			echo "Table clear was successful<br />";
+		} else {
+			echo "Error clearing the tables: " . $this->conn->error."<br />";
+		}
 	}
 	
 }

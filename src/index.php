@@ -2,11 +2,11 @@
 include 'head.php';
 ?>
 
-<!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Web security demo</h1>
-        <p>MySql Server name: <?php echo getenv('DB_SERVER') ?: "localhost" ?></p>
-        <p>MySql root password: <?php echo getenv('DB_PASSWORD') ?: "" ?></p>
+        <p>MariaDb Server name: <?php echo getenv('DB_SERVER') ?: "localhost" ?></p>
+        <p>MariaDb root password: <?php echo getenv('DB_PASSWORD') ?: "" ?></p>
+		<p><a href="<?php echo getenv('DB_ADMIN') ? 'http://localhost:'.getenv('DB_ADMIN') : "http://localhost/phpmyadmin/" ?>" target="_blank">phpMyAdmin</a></p>
       </div>
 
 <?php
