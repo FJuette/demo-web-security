@@ -32,16 +32,24 @@
 				</ul>
 			  </li>
 			  <li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">SQL-Injection
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">SQL Injection
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-				  <li><a href="#">Demo 1</a></li>
+					<li><a href="/sqli/sqli1.php">Login</a></li>
 				  <li><a href="#">Demo 2</a></li>
 				  <li><a href="#">Demo 3</a></li>
 				</ul>
 			  </li>
-			  <li><a href="#">LFI</a></li>
-			  <li><a href="#">RFI</a></li>
+			  <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">File Inclusion
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/fi/rfi.php">RFI</a></li>
+				  <li><a href="#">Demo 2</a></li>
+				  <li><a href="#">Demo 3</a></li>
+				</ul>
+			  </li>
+			  <li><a href="#">Other</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="../config.php"><span class="glyphicon glyphicon-cog"></span> Config</a></li>

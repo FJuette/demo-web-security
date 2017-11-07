@@ -17,7 +17,7 @@ services:
     environment:
       - DB_SERVER=db
       - DB_PASSWORD=password
-	  - DB_ADMIN=5200
+      - DB_ADMIN=5200
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

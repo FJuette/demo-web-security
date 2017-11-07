@@ -30,6 +30,7 @@ class DatabaseHandler
 		$this->CreateDatabase();
 		$this->CreateTables();
 		$this->ClearTables();
+		$this->AddStartData();
 		
 		$this->CloseConnection();
 	}
@@ -72,24 +73,43 @@ class DatabaseHandler
 		return $comments;
 	}
 
+	public function CheckUser($username, $password) {
+		$this->conn->select_db($this->dbName);
+		$sql = "SELECT * FROM users WHERE username = '".$username."' AND password = '".$password."';";
+		$result = $this->conn->query($sql);
+
+		if ($result->num_rows > 0) {
+			return TRUE;
+		}
+		return FALSE;
+	}
+
 	private function CreateDatabase() {
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
 		if ($this->conn->query($sql) === TRUE) {
 			echo "Database creation/reset was successful<br />";
 		} else {
-			echo "Error creating database: " . $this->conn->error."<br />";
+			die("Error creating database: " . $this->conn->error);
 		}
 	}
 	
 	private function CreateTables() {
 		$this->conn->select_db($this->dbName);
 		// Create tables
-		$sql = "CREATE TABLE IF NOT EXISTS `comments` (`id` int(3) NOT NULL auto_increment, `comment` varchar(250)  NOT NULL default '', PRIMARY KEY  (`id`));";
-		if ($this->conn->query($sql) === TRUE) {
-			echo "Table creation/reset was successful<br />";
-		} else {
-			echo "Error creating tables: " . $this->conn->error."<br />";
+		$sql = "CREATE TABLE IF NOT EXISTS `comments` 
+		(`id` int(3) NOT NULL auto_increment, `comment` varchar(250) NOT NULL default '', PRIMARY KEY  (`id`));";
+
+		if ($this->conn->query($sql) === FALSE) {
+			die("Error creating the comment table: " . $this->conn->error);
+		}
+
+
+		$sql = "CREATE TABLE IF NOT EXISTS `users` 
+		(`id` int(3) NOT NULL auto_increment, `username` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, PRIMARY KEY  (`id`))";
+		
+		if ($this->conn->query($sql) === FALSE) {
+			die("Error creating the users table: " . $this->conn->error);
 		}
 	}
 	
@@ -97,10 +117,22 @@ class DatabaseHandler
 		$this->conn->select_db($this->dbName);
 		// Clear tables
 		$sql = "DELETE FROM comments;";
-		if ($this->conn->query($sql) === TRUE) {
-			echo "Table clear was successful<br />";
-		} else {
-			echo "Error clearing the tables: " . $this->conn->error."<br />";
+		if ($this->conn->query($sql) === FALSE) {
+			die("Error clearing the comment table: " . $this->conn->error);
+		}
+
+		$sql = "DELETE FROM users;";
+		if ($this->conn->query($sql) === FALSE) {
+			die("Error clearing the users table: " . $this->conn->error);
+		}
+	}
+
+	private function AddStartData() {
+		$this->conn->select_db($this->dbName);
+		// Add default data
+		$sql = "INSERT INTO users (username, password) VALUES ('admin', 'password'), ('user', '123');";
+		if ($this->conn->query($sql) === FALSE) {
+			die("Error clearing the tables: " . $this->conn->error);
 		}
 	}
 	
