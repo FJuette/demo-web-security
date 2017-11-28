@@ -29,12 +29,12 @@ if (isset($_GET['username']) && isset($_GET['password'])) {
     $username = $_GET['username'];
     $password = $_GET['password'];
     if ($db->CheckUser($username, $password)) {
-        echo "<div class='alert alert-success'>
+        echo "<div class='alert alert-success' style='margin-top: 20px;'>
             <a href='#' class='close' data-dismiss='alert'>&times;</a>
-            <strong>Login erfolgreich</strong>
+            <strong>Login successful.</strong>
         </div>";
     } else {
-        echo "<div class='alert alert-danger'>
+        echo "<div class='alert alert-danger' style='margin-top: 20px;'>
             <a href='#' class='close' data-dismiss='alert'>&times;</a>
             <strong>Wrong username or password.</strong>
         </div>";

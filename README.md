@@ -4,7 +4,7 @@ This project and this readme is WIP.
 
 ## Idea
 
- * Simple Webproject to show XSS, SQL Injection, LFI, RFI...
+ * Simple Webproject to show XSS, SQL Injection, LFI, RFI, Cross Site Request Forgery (CSRF)
 
 ## Run
 

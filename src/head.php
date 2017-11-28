@@ -36,7 +36,7 @@
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="/sqli/sqli1.php">Login</a></li>
-				  <li><a href="#">Demo 2</a></li>
+				  <li><a href="/sqli/read.php">Read data</a></li>
 				  <li><a href="#">Demo 3</a></li>
 				</ul>
 			  </li>
@@ -45,11 +45,9 @@
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="/fi/rfi.php">RFI</a></li>
-				  <li><a href="#">Demo 2</a></li>
-				  <li><a href="#">Demo 3</a></li>
+				  <li><a href="/fi/lfi.php?file=1.txt">LFI</a></li>
 				</ul>
 			  </li>
-			  <li><a href="#">Other</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="../config.php"><span class="glyphicon glyphicon-cog"></span> Config</a></li>

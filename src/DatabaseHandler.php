@@ -84,6 +84,18 @@ class DatabaseHandler
 		return FALSE;
 	}
 
+	public function GetUserInformation($username) {
+		$this->conn->select_db($this->dbName);
+		$sql = "SELECT username FROM users;";
+		$result = $this->conn->query($sql);
+
+		$users = array();
+		while($row = $result->fetch_assoc()) {
+			array_push($users, $row["username"]);
+		}
+		return $users;
+	}
+
 	private function CreateDatabase() {
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
