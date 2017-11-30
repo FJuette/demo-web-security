@@ -48,6 +48,13 @@
 				  <li><a href="/fi/lfi.php?file=1.txt">LFI</a></li>
 				</ul>
 			  </li>
+				<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Command Injection
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/ci/ci.php?host=tu-clausthal.de">CI</a></li>
+				</ul>
+			  </li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="../config.php"><span class="glyphicon glyphicon-cog"></span> Config</a></li>
