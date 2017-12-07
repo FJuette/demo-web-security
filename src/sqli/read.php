@@ -9,9 +9,12 @@ $db = new DatabaseHandler();
 <h3>Read data</h3>
 
 <?php
-$users = $db->GetUsers();
-foreach ($users as $user) {
-    echo "<li class='list-group-item'>".$user."</li>";
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $user = $db->GetUserInformationById($id);
+    $sep = var_dump($user);
+    echo "<div>".$sep."</div>";
 }
 ?>
 

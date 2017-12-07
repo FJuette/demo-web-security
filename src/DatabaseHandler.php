@@ -28,8 +28,8 @@ class DatabaseHandler
 	
 	public function ResetDatabase() {
 		$this->CreateDatabase();
+		$this->DropTables();
 		$this->CreateTables();
-		$this->ClearTables();
 		$this->AddStartData();
 		
 		$this->CloseConnection();
@@ -96,6 +96,18 @@ class DatabaseHandler
 		return $users;
 	}
 
+	public function GetUserInformationById($id) {
+		$this->conn->select_db($this->dbName);
+		$sql = "SELECT id, username FROM users WHERE id = " . $id . ";";
+		$result = $this->conn->query($sql);
+
+		$users = array();
+		while($row = $result->fetch_assoc()) {
+			array_push($users, $row);
+		}
+		return $users;
+	}
+
 	private function CreateDatabase() {
 		// Create database
 		$sql = "CREATE DATABASE IF NOT EXISTS ".$this->dbName;
@@ -118,22 +130,22 @@ class DatabaseHandler
 
 
 		$sql = "CREATE TABLE IF NOT EXISTS `users` 
-		(`id` int(3) NOT NULL auto_increment, `username` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, PRIMARY KEY  (`id`))";
+		(`id` int(3) NOT NULL auto_increment, `username` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, `firstname` varchar(100) NOT NULL, PRIMARY KEY  (`id`))";
 		
 		if ($this->conn->query($sql) === FALSE) {
 			die("Error creating the users table: " . $this->conn->error);
 		}
 	}
 	
-	private function ClearTables() {
+	private function DropTables() {
 		$this->conn->select_db($this->dbName);
 		// Clear tables
-		$sql = "DELETE FROM comments;";
+		$sql = "DROP TABLE comments;";
 		if ($this->conn->query($sql) === FALSE) {
 			die("Error clearing the comment table: " . $this->conn->error);
 		}
 
-		$sql = "DELETE FROM users;";
+		$sql = "DROP TABLE users;";
 		if ($this->conn->query($sql) === FALSE) {
 			die("Error clearing the users table: " . $this->conn->error);
 		}
@@ -142,7 +154,7 @@ class DatabaseHandler
 	private function AddStartData() {
 		$this->conn->select_db($this->dbName);
 		// Add default data
-		$sql = "INSERT INTO users (username, password) VALUES ('admin', 'password'), ('user', '123');";
+		$sql = "INSERT INTO users (username, password, firstname) VALUES ('admin', 'password', 'Fabian'), ('user', '123', 'Tester');";
 		if ($this->conn->query($sql) === FALSE) {
 			die("Error clearing the tables: " . $this->conn->error);
 		}

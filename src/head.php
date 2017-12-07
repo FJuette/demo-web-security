@@ -36,8 +36,7 @@
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="/sqli/sqli1.php">Login</a></li>
-				  <li><a href="/sqli/read.php">Read data</a></li>
-				  <li><a href="#">Demo 3</a></li>
+				  <li><a href="/sqli/read.php?id=1">Read</a></li>
 				</ul>
 			  </li>
 			  <li class="dropdown">
