@@ -2,6 +2,8 @@
 
 [Reference][1]
 
+[XSS Filter Evasion Cheat Sheet][3]
+
 ## Non-Persistent
 
 ```javascript
@@ -34,3 +36,4 @@ CONTENT="0;url=data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTIScpPC9zY3JpcHQ+">
 
 [1]: http://www.thegeekstuff.com/2012/02/xss-attack-examples/
 [2]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+[3]: https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
