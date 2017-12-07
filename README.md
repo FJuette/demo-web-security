@@ -17,6 +17,6 @@ docker run -d -p 5100:80 web-security
 
 ## Docs
  * [XSS](docs/XSS.md)
- * [SQLi](SQL Injection/sqli.md)
- * [CI](Command Injection/ci.md)
- * [FI](File Injection/fi.md)
+ * [SQL Injection](docs/sqli.md)
+ * [Command Injection](docs/ci.md)
+ * [File Injection](docs/fi.md)
