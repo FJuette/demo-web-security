@@ -2,10 +2,6 @@
 
 This project and this readme is WIP.
 
-## Idea
-
- * Simple Webproject to show XSS, SQL Injection, LFI, RFI, Cross Site Request Forgery (CSRF)
-
 ## Run
 
 Start mariadb, phpmyadmin and apache with docker-Compose
@@ -21,3 +17,6 @@ docker run -d -p 5100:80 web-security
 
 ## Docs
 [XSS](docs/XSS.md)
+[SQLi](SQL Injection/sqli.md)
+[CI](Command Injection/ci.md)
+[FI](File Injection/fi.md)

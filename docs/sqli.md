@@ -12,6 +12,7 @@ anything' OR 1='1
 ```
 
 ## Read
+[Reference][3]
 
 Test for injection
 ```
@@ -41,3 +42,4 @@ python sqlmap.py -u http://localhost:5100/sqli/read.php?id=1 -f --banner --dbs -
 
 [1]: http://www.unixwiz.net/techtips/sql-injection.html
 [2]: https://github.com/sqlmapproject/sqlmap/wiki/Usage
+[3]: http://www.sqlinjection.net/union/
