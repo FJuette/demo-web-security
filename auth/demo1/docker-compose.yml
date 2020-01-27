@@ -1,0 +1,17 @@
+version: '3.2'
+
+# Define the services/containers to be run
+services:
+  web:
+    image: dockercloud/hello-world
+    container_name: web
+      
+  auth:
+    image: beevelop/nginx-basic-auth
+    container_name: auth
+    links:
+      - web
+    ports:
+      - "8080:80"
+    environment:
+      - HTPASSWD=admin:$$apr1$$7ebkr9ah$$YkCxetZRQCb8OTA5asw01.
