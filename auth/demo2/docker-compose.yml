@@ -1,0 +1,8 @@
+version: '3.2'
+
+# Define the services/containers to be run
+services:
+  auth2:
+    build: .
+    ports:
+      - 8080:80
